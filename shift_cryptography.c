@@ -34,12 +34,16 @@ printf("The decrypted text is: ");
     for (i=0;i<strlen(b);i++){
         if(b[i]>='A'&&b[i]<='Z'){
             p=(b[i]-64-k)%26;
+            if(p<=0){p=26+p;}
             if(p==0){printf("Z");}
+
             else {printf("%c",p+64);}
         }
         else if(b[i]>='a'&&b[i]<='z'){
             p=(b[i]-96-k)%26;
+            if(p<=0){p=26+p;}
             if(p==0){printf("z");}
+
             else{printf("%c",p+96);}
 
         }
